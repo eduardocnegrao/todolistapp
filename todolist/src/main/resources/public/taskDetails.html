@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app>
+
+<head>
+</head>
+
+<body>
+		<div ng-show="item.editItem" ng-hide="!item.editItem">
+			<input type="text" class="form-width" ng-model="item.name"
+				placeholder="Type the task name" /> 
+			<button ng-click="updateTask(item)"
+				class="btn btn-primary btn-sm btn-width">Update</button>
+		</div>
+		<div>
+			<img alt="Edit" title="Edit Task" src="img/edit.png" class="img"
+				ng-click="editTask(item)" />&nbsp; 
+			
+			<img alt="Delete"
+				title="Delete Task" src="img/delete.png" class="img"
+				ng-click="deleteTaskDetail(item)" />
+		</div>
+</body>
+</html>

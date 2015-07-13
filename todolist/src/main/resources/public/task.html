@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app>
+
+<head>
+</head>
+
+<body>
+	<div ng-show="item.editItem" ng-hide="!item.editItem">
+		<input type="text" class="form-width" ng-model="item.name"
+			placeholder="Type the task name" />
+		<button ng-click="updateTask(item)"
+			class="btn btn-primary btn-sm btn-width">Update</button>
+	</div>
+	<div>
+		<img alt="Edit" title="Edit Task" src="img/edit.png" class="img"
+			ng-click="editTask(item)" />&nbsp; <img alt="Delete"
+			title="Delete Task" src="img/delete.png" class="img"
+			ng-click="deleteTask(item)" /> <img alt="View Details"
+			title="View Details" src="img/details.png" class="img"
+			ng-click="viewDetails(item)" />
+	</div>
+	<div ng-show="item.viewDetails">
+		<div ng-repeat="item in details">
+			<div class="alert alert-danger" ng-show="!item.done">
+
+				<input type="checkbox" ng-model="item.done"
+					ng-click="updateTask(item)">&nbsp;TO-DO
+
+				<div ng-show="!item.editItem" ng-hide="item.editItem">
+					<b>{{item.name}}</b> 
+				</div>
+				<div style="padding-left: 10px;">
+					<br /><br />
+					<div ng-include src="'taskDetails.html'"></div>
+				</div>	
+			</div>
+			<div class="alert alert-success" ng-show="item.done">
+
+				<input type="checkbox" ng-model="item.done"
+					ng-click="updateTask(item)">&nbsp;DONE
+				<div ng-show="!item.editItem" ng-hide="item.editItem">
+					<del>
+						<b>{{item.name}}</b>
+					</del>
+				</div>
+				<div style="padding-left: 10px;">
+					<br /><br />
+					<div ng-include src="'taskDetails.html'" style="padding-top: 10px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

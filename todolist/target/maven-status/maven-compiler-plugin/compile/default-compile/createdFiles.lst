@@ -1,0 +1,4 @@
+com/integritastech/todolist/controller/TaskController.class
+com/integritastech/todolist/Application.class
+com/integritastech/todolist/domain/Task.class
+com/integritastech/todolist/domain/repository/TaskRepository.class
